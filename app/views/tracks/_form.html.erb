@@ -1,0 +1,23 @@
+<form action="<%= tracks_url %>" method="POST">
+  <%= form_auth_field %>
+  
+  <div class="form-group">
+    <label for="track_name">Track Name:</label>
+    <input type="text" class="form-control" id="track_name" name="track[name]">
+  </div>
+
+  <div class="form-group">
+    <label for="track_lyrics">Lyrics:</label>
+    <textarea name="track[lyrics]" id="track_lyrics" cols="30" rows="5" class="form-control"><%= track.lyrics %></textarea>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="track[bonus]" <%= "checked" if track.bonus %>> <strong>Bonus track?</strong>
+    </label>
+  </div>
+
+  <input type="hidden" value="<%= album_id %>" name="track[album_id]">
+
+  <input type="submit" value="Add Track" class="btn btn-primary">
+</form>

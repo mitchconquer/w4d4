@@ -1,0 +1,16 @@
+<br>
+<%= link_to "<< Back to #{@album.band.name}", bands_url(@album.band.id) %>
+<h1><%= @album.name %>
+  <% if @album.tracks.count > 0 %>
+    <span class="badge"><%= @album.tracks.count %></span>
+  <% end %>
+</h1>
+
+<h4>Tracks</h4>
+
+<div class="panel-group" id="track-list" role="tablist" aria-multiselectable="true">
+  <%= render partial: "tracks/track", collection: @album.tracks, as: :track %>
+</div>
+
+<h4>Add a New Track</h4>
+<%= render "tracks/form", track: @track, album_id: @album.id %>

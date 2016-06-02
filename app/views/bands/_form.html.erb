@@ -1,0 +1,10 @@
+<form action="<%= bands_url %>" method="POST">
+  <%= form_auth_field %>
+
+  <div class="form-group">
+    <label for="band_name">Band Name: </label>
+    <input type="text" id="band_name" name="band[name]" class="form-control" value="<%= band.name %>">
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="Add Band">
+</form>

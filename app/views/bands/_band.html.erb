@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= band.name %></h3>
+  </div>
+
+  <% if band.albums.count < 1 %>
+    <div class="panel-body"></div>
+  <% end %>
+
+  <% if band.albums %>
+    <div class="list-group">
+      <% band.albums.each do |album| %>
+        <a class="list-group-item" href="<%= album_url(album.id) %>"><%= album.name %></a>
+      <% end %>
+    </div>
+    
+  <% end %>
+  <div class="panel-footer">
+    <%= link_to "+ New Album", "/bands/#{band.id}/albums/new" %>
+  </div>
+</div>

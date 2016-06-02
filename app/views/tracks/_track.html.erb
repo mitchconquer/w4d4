@@ -1,0 +1,25 @@
+<%#= link_to track.name, track_url(track.id), class: 'list-group-item' %>
+
+<div class="panel panel-default">
+ <div class="panel-heading" role="tab" id="track-<%= track.id %>-heading">
+   <h4 class="panel-title">
+     <a role="button" data-toggle="collapse" data-parent="#track-list" href="#track-<%= track.id %>-collapse" aria-expanded="" aria-controls="track-<%= track.id %>-collapse">
+       <%= track.name %>
+     </a>
+   </h4>
+ </div>
+ <div id="track-<%= track.id %>-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="track-<%= track.id %>-heading">
+   <div class="panel-body">
+     <br>
+     <span>Bonus Track? </span>
+        <% if track.bonus %>
+           Yaasss!
+        <% else %>
+           Nerp :-/
+        <% end %>
+     <br><br>
+     <span>Lyrics: </span><br>
+      <%= track.lyrics %>
+   </div>
+ </div>
+</div>
