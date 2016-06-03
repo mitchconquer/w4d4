@@ -1,0 +1,13 @@
+<form action="<%= notes_url %>" method="POST">
+  <%= form_auth_field %>
+
+  <div class="form-group">
+    <label for="note_body">Add Your Own Note:</label>
+    <textarea name="note[body]" id="note_body" cols="30" rows="3" class="form-control"></textarea>
+  </div>
+
+  <input type="hidden" name="note[track_id]" value="<%= track_id %>">
+  <input type="hidden" name="note[user_id]" value="<%= current_user.id %>">
+
+  <input type="submit" value="Submit" class="btn btn-default">
+</form>

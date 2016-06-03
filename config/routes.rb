@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   resources :bands
   resources :albums, except: [:index, :new]
   resources :tracks, except: [:index, :new]
+  resources :notes, only: [:new, :create, :destroy]
 
   get "/bands/:band_id/albums/new", to: 'albums#new', as: 'new_band_album'
   get "albums/:album_id/tracks/new", to: 'tracks#new', as: 'new_album_track'
 
   get 'login', to: 'sessions#new'
+
+  get 'root', to: 'bands#index'
 end

@@ -1,5 +1,5 @@
 <br>
-<%= link_to "<< Back to #{@album.band.name}", bands_url(@album.band.id) %>
+<%= link_to "<< Back to Bands", bands_url %>
 <h1><%= @album.name %>
   <% if @album.tracks.count > 0 %>
     <span class="badge"><%= @album.tracks.count %></span>

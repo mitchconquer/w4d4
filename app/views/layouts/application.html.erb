@@ -15,6 +15,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+          <li><%= link_to "Hi, #{current_user.email}!", user_url(current_user.id) %></li>
           <li>
             <form action="<%= session_url %>" method="POST" class="navbar-form navbar-right">
               <input type="hidden" value="DELETE" name="_method">

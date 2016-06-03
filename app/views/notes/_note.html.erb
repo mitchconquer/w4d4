@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <%= note.user.email %> says:
+  </div>
+
+  <div class="panel-body">
+    <%= note.body %>
+    <% if current_user.id == note.user_id %>
+    <br><br>
+      <%= button_to "Delete", notes_url(note.id), method: :delete, class: 'btn btn-danger btn-xs' %>
+    <% end %>
+  </div>
+</div>

@@ -10,16 +10,21 @@
  </div>
  <div id="track-<%= track.id %>-collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="track-<%= track.id %>-heading">
    <div class="panel-body">
-     <br>
-     <span>Bonus Track? </span>
+     <strong>Bonus Track? </strong><br>
         <% if track.bonus %>
            Yaasss!
         <% else %>
            Nerp :-/
         <% end %>
      <br><br>
-     <span>Lyrics: </span><br>
+     <strong>Lyrics </strong><br>
       <%= track.lyrics %>
+    <br><br>
+    <strong>Notes</strong>
+    <br>
+    <%= render partial: "notes/note", collection: track.notes, as: :note %>
+    <br>
+    <%= render partial: "notes/form", locals: {track_id: track.id}%>
    </div>
  </div>
 </div>

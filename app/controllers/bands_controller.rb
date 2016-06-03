@@ -1,7 +1,7 @@
 class BandsController < ApplicationController
 
   def index
-    @bands = Band.all.includes(:albums)
+    @bands = Band.all.includes(:albums).order(:name)
     render :index
   end
 

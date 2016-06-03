@@ -18,7 +18,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.includes(:tracks).find(params[:id])
+    @album = Album.includes(tracks: [notes: [:user]]).find(params[:id])
     @track = Track.new
     render :show
   end
